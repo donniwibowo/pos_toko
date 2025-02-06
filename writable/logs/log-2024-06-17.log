@@ -1,0 +1,81 @@
+CRITICAL - 2024-06-17 05:21:51 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+in APPPATH\Controllers\PenjualanApi.php on line 34.
+ 1 APPPATH\Controllers\PenjualanApi.php(34): count('["Instance of \'CartModel\'","Instance of \'CartModel\'"]')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-06-17 05:28:32 --> foreach() argument must be of type array|object, string given
+in APPPATH\Controllers\PenjualanApi.php on line 35.
+ 1 APPPATH\Controllers\PenjualanApi.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-06-17 05:29:03 --> Cannot access offset of type string on string
+in APPPATH\Controllers\PenjualanApi.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-06-17 05:29:22 --> Attempt to read property "namaProduk" on string
+in APPPATH\Controllers\PenjualanApi.php on line 37.
+ 1 APPPATH\Controllers\PenjualanApi.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "namaProduk" on string', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-06-17 05:37:33 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\PenjualanApi.php on line 44.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-06-17 05:38:34 --> Undefined property: stdClass::$namaProduk
+in APPPATH\Controllers\PenjualanApi.php on line 37.
+ 1 APPPATH\Controllers\PenjualanApi.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$namaProduk', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('70efdf2ec9b086079795c442636b55fb')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2024-06-17 06:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:03:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-17 06:03:34 --> [DEPRECATED] usort(): Returning bool from comparison function is deprecated, return an integer less than, equal to, or greater than zero in APPPATH\Controllers\Penjualan.php on line 595.
+ 1 APPPATH\Controllers\Penjualan.php(595): usort([...], Object(Closure))
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Penjualan->getReportHarian()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2024-06-17 06:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-17 06:18:21 --> Undefined variable $qty
+in APPPATH\Controllers\PenjualanApi.php on line 79.
+ 1 APPPATH\Controllers\PenjualanApi.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $qty', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 79)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('6f4922f45568161a8cdf4ad2299f6d23')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2024-06-17 06:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 06:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-17 08:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

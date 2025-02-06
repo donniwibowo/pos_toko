@@ -1,0 +1,34 @@
+WARNING - 2024-09-21 14:07:39 --> [DEPRECATED] Required parameter $keyword follows optional parameter $searchBySupplier in APPPATH\Controllers\SupplierApi.php on line 124.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(314): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\SupplierApi.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\SupplierApi')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\SupplierApi')
+ 5 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\SupplierApi', true)
+ 6 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-09-21 14:07:39 --> Too few arguments to function App\Controllers\SupplierApi::getTagihan(), 5 passed in C:\xampp\htdocs\skripsi\pos-admin\vendor\codeigniter4\framework\system\CodeIgniter.php on line 932 and exactly 6 expected
+in APPPATH\Controllers\SupplierApi.php on line 0.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\SupplierApi->getTagihan('072b030ba126b2f4b2374f342be9ed44', '1', '0', '0', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+WARNING - 2024-09-21 14:07:39 --> [DEPRECATED] Required parameter $keyword follows optional parameter $searchBySupplier in APPPATH\Controllers\SupplierApi.php on line 124.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(314): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\SupplierApi.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\SupplierApi')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\SupplierApi')
+ 5 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\SupplierApi', true)
+ 6 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-09-21 14:07:39 --> Too few arguments to function App\Controllers\SupplierApi::getTagihan(), 5 passed in C:\xampp\htdocs\skripsi\pos-admin\vendor\codeigniter4\framework\system\CodeIgniter.php on line 932 and exactly 6 expected
+in APPPATH\Controllers\SupplierApi.php on line 0.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\SupplierApi->getTagihan('072b030ba126b2f4b2374f342be9ed44', '0', '0', '0', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')

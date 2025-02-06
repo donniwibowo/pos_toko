@@ -1,0 +1,137 @@
+CRITICAL - 2024-07-21 05:43:03 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:43:27 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:44:31 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:45:05 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:46:46 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:48:17 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:48:43 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:48:45 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:48:47 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:51:30 --> Undefined property: stdClass::$free_product_id
+in APPPATH\Controllers\PenjualanApi.php on line 64.
+ 1 APPPATH\Controllers\PenjualanApi.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$free_product_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 64)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:52:56 --> Class "App\Models\PenjualanFreeItemModel" not found
+in APPPATH\Controllers\PenjualanApi.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:54:35 --> Class "App\Models\PenjualanFreeItemModel" not found
+in APPPATH\Controllers\PenjualanApi.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 05:56:15 --> Class "App\Models\PenjualanFreeItemModel" not found
+in APPPATH\Controllers\PenjualanApi.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->submitOrder('a5771bce93e200c36f7cd9dfd0e5deaa')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2024-07-21 05:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 05:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 05:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 05:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-07-21 05:59:10 --> [DEPRECATED] usort(): Returning bool from comparison function is deprecated, return an integer less than, equal to, or greater than zero in APPPATH\Controllers\Penjualan.php on line 595.
+ 1 APPPATH\Controllers\Penjualan.php(595): usort([...], Object(Closure))
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Penjualan->getReportHarian()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2024-07-21 05:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 06:13:31 --> Undefined property: stdClass::$penjualan_id
+in APPPATH\Controllers\PenjualanApi.php on line 628.
+ 1 APPPATH\Controllers\PenjualanApi.php(628): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$penjualan_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 628)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->detailPenjualan('a5771bce93e200c36f7cd9dfd0e5deaa', '4242')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 06:13:38 --> Undefined property: stdClass::$penjualan_id
+in APPPATH\Controllers\PenjualanApi.php on line 628.
+ 1 APPPATH\Controllers\PenjualanApi.php(628): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$penjualan_id', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 628)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->detailPenjualan('d67d8ab4f4c10bf22aa353e27879133c', '4242')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-07-21 06:14:18 --> Undefined property: stdClass::$is_deleted
+in APPPATH\Controllers\PenjualanApi.php on line 636.
+ 1 APPPATH\Controllers\PenjualanApi.php(636): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$is_deleted', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Controllers\\PenjualanApi.php', 636)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->detailPenjualan('d67d8ab4f4c10bf22aa353e27879133c', '4242')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')

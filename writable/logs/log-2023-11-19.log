@@ -1,0 +1,144 @@
+CRITICAL - 2023-11-19 01:48:46 --> syntax error, unexpected variable "$user_token"
+in APPPATH\Models\UserApiLoginModel.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Models\\UserApiLoginModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserApiLoginModel')
+ 3 APPPATH\Controllers\UserApi.php(39): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserApiLoginModel')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\UserApi->login()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserApi))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2023-11-19 01:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 01:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 03:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 03:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 03:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 03:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-19 03:22:39 --> Class "App\Controllers\UserApiLoginModel" not found
+in APPPATH\Controllers\ProdukApi.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ProdukApi->getAllProduk('a87ff679a2f3e71d9181a67b7542122c')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProdukApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 03:22:39 --> Class "App\Controllers\UserApiLoginModel" not found
+in APPPATH\Controllers\ProdukApi.php on line 141.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ProdukApi->getProdukHarga('0', 'a87ff679a2f3e71d9181a67b7542122c')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProdukApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 03:23:36 --> Class "App\Controllers\UserApiLoginModel" not found
+in APPPATH\Controllers\ProdukApi.php on line 141.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ProdukApi->getProdukHarga('0', '44')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProdukApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 03:23:54 --> Class "App\Controllers\UserApiLoginModel" not found
+in APPPATH\Controllers\ProdukApi.php on line 141.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\ProdukApi->getProdukHarga('0', '44')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProdukApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:01:19 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:01:19 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:02:04 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:02:06 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:02:11 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:02:56 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:02:59 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:03:11 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:03:32 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2023-11-19 05:03:44 --> require(C:\xampp\htdocs\skripsi\pos-admin\app\Config/Routes.php): Failed to open stream: No such file or directory
+in SYSTEMPATH\Router\RouteCollection.php on line 267.
+ 1 SYSTEMPATH\Router\RouteCollection.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(C:\\xampp\\htdocs\\skripsi\\pos-admin\\app\\Config/Routes.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\skripsi\\pos-admin\\vendor\\codeigniter4\\framework\\system\\Router\\RouteCollection.php', 267)
+ 2 SYSTEMPATH\Router\RouteCollection.php(267): require()
+ 3 SYSTEMPATH\CodeIgniter.php(800): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(447): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+INFO - 2023-11-19 07:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 07:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 07:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 07:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-19 07:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

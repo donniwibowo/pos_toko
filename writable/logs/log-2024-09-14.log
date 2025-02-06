@@ -1,0 +1,22 @@
+CRITICAL - 2024-09-14 15:44:23 --> Class "App\Controllers\DateTime" not found
+in APPPATH\Controllers\SupplierApi.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\SupplierApi->inputTagihan('072b030ba126b2f4b2374f342be9ed44')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-09-14 15:47:22 --> Class "App\Controllers\DateTime" not found
+in APPPATH\Controllers\SupplierApi.php on line 80.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\SupplierApi->inputTagihan('072b030ba126b2f4b2374f342be9ed44')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierApi))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2024-09-14 15:49:19 --> strtotime(): Argument #1 ($datetime) must be of type string, DateTime given
+in APPPATH\Controllers\SupplierApi.php on line 89.
+ 1 APPPATH\Controllers\SupplierApi.php(89): strtotime(Object(DateTime))
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\SupplierApi->inputTagihan('072b030ba126b2f4b2374f342be9ed44')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SupplierApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')

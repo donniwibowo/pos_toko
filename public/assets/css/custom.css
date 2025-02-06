@@ -1,0 +1,59 @@
+.errors[role=alert] ul li {
+	color: red;
+}
+
+.error-msg {
+	color: red !important;
+}
+
+.select2-container--default .select2-selection--single, 
+.select2-container--default.select2-container--focus .select2-selection--multiple, 
+.select2-container--default.select2-container--focus .select2-selection--multiple, .select2-container--default .select2-selection--multiple {
+	border-color: #DFE5EF;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+	padding-left: 10px;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+	height: 22px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	color: #000;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	background-color: transparent;
+}
+
+
+.label-ket p {
+	margin-bottom: 0;
+}
+
+.fa-2y {
+	font-size: 1.5em;
+}
+
+.ti-info-circle {
+
+}
+
+.btn-edit-table {
+
+}
+
+
+.ti-discount-2 {
+	
+}
+
+.btn-delete-table {
+	color: red;
+}
+
+.hidden {
+	display: none !important;
+}

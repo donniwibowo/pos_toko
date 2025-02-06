@@ -1,0 +1,16 @@
+CRITICAL - 2025-01-30 13:56:45 --> array_push(): Argument #1 ($array) must be of type array, null given
+in APPPATH\Controllers\PenjualanApi.php on line 765.
+ 1 APPPATH\Controllers\PenjualanApi.php(765): array_push(null, 'diamond uht full cream (1 l)')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->getProdukRekomendasi('35f4a8d465e6e1edc05f3d8ab658c551')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
+CRITICAL - 2025-01-30 13:56:56 --> array_push(): Argument #1 ($array) must be of type array, null given
+in APPPATH\Controllers\PenjualanApi.php on line 765.
+ 1 APPPATH\Controllers\PenjualanApi.php(765): array_push(null, 'diamond uht full cream (1 l)')
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\PenjualanApi->getProdukRekomendasi('35f4a8d465e6e1edc05f3d8ab658c551')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PenjualanApi))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\skripsi\\pos-admin\\public\\index.php')
