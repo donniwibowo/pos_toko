@@ -107,6 +107,7 @@ class PenjualanApi extends ResourceController
                                                                 ->findAll();
 
                                 $stop_pengurangan_stok = false;
+                                /* code ini tidak ada masalah, ditutup sementara dg alasan stock real tidak sinkron
                                 if($produk_stok) {
                                     foreach($produk_stok as $p) {
                                         if(!$stop_pengurangan_stok) {
@@ -123,6 +124,7 @@ class PenjualanApi extends ResourceController
                                         
                                     }
                                 }
+                                */
                             }
 
                         }
@@ -759,6 +761,11 @@ class PenjualanApi extends ResourceController
                     $result = $penjualan_detail->getResult();
                     
                     if($result) {
+                        foreach($result as $d) {
+                            $data[$d->penjualan_id][] = strtolower($d->nama_produk);
+                            
+                        }
+                        /*
                         $current_penjualan_id = $result[0]->penjualan_id;
 
                         $tmp_data = [];
@@ -785,49 +792,51 @@ class PenjualanApi extends ResourceController
                         if(count($tmp_data) > 0) {
                             array_push($data, $tmp_data);
                         }
+                        */
                     }
 
                     if(count($data) > 0) {
                         $produk_model = new ProdukModel();
 
                         $labels  = [];
-                        $associator = new Apriori($support, $confidence);
-                        $associator->train($data, $labels);
+                        $associator = new Apriori(0.1, 0.1);
+                        $associator->train(array_values($data), $labels);
                         $rekomendasi = $associator->predict($list_belanja);
                         // $rekomendasi = $associator->predict(['amanda kuning', 'gogo coklat']);
                         // $rekomendasi = $associator->getRules();
 
-                        $unique_rekomendasi = [];
-                        $tmp_rekomendasi = [];
-                        foreach ($rekomendasi as $rek) {
-                            foreach($rek as $r) {
-                                if(!in_array($r, $tmp_rekomendasi)) {
-                                    array_push($tmp_rekomendasi, $r);
-                                    $produk_data = $produk_model->find($data_produk[$r]);
+                        // $unique_rekomendasi = [];
+                        // $tmp_rekomendasi = [];
+                        // foreach ($rekomendasi as $rek) {
+                        //     foreach($rek as $r) {
+                        //         if(!in_array($r, $tmp_rekomendasi)) {
+                        //             array_push($tmp_rekomendasi, $r);
+                        //             $produk_data = $produk_model->find($data_produk[$r]);
 
 
-                                    $r_info = [
-                                        'produk_id' => $data_produk[$r],
-                                        'nama_produk' => ucwords($r),
-                                        'satuan_terkecil' => $produk_data['satuan_terkecil'],
-                                        'printed_stok' => $produk_model->getStok($data_produk[$r]),
-                                        'total_stok' => $produk_model->getStokInSatuanTerkecil($data_produk[$r])
-                                    ];
+                        //             $r_info = [
+                        //                 'produk_id' => $data_produk[$r],
+                        //                 'nama_produk' => ucwords($r),
+                        //                 // 'satuan_terkecil' => $produk_data['satuan_terkecil'],
+                        //                 // 'printed_stok' => $produk_model->getStok($data_produk[$r]),
+                        //                 // 'total_stok' => $produk_model->getStokInSatuanTerkecil($data_produk[$r])
+                        //             ];
 
-                                    array_push($unique_rekomendasi, $r_info);
-                                }
+                        //             array_push($unique_rekomendasi, $r_info);
+                        //         }
 
-                            }
-                        }
+                        //     }
+                        // }
 
-                        $rekomendasi = $unique_rekomendasi;
+                        // $rekomendasi = $unique_rekomendasi;
                     }
 
 
                     $response = array(
                         'status' => 200,
+                        'data_produk' => $list_belanja,
                         'data_rekomendasi' => $rekomendasi,
-                        // 'data_produk' => $data_produk
+                       
                     );
                 }
 
