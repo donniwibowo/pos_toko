@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'smartpos_tigajaya_db',
+        'username' => 'tigajaya_user',
+        'password' => 'zxNy)K%,hzX}',
+        'database' => 'tigajaya_db',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

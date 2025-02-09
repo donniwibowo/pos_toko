@@ -1,5 +1,3 @@
-
-text/x-generic Penjualan.php ( PHP script, ASCII text, with very long lines, with CRLF line terminators )
 <?php
 
 namespace App\Controllers;
@@ -197,7 +195,6 @@ class Penjualan extends BaseController
         $builder->where('tbl_penjualan.is_deleted', 0);
         $builder->join('tbl_user', 'tbl_penjualan.dibuat_oleh = tbl_user.user_id');
         $builder->orderBy('tbl_penjualan.tgl_dibuat', 'desc');
-        $builder->limit(500);
         $penjualan_data   = $builder->get();
 
         return view('penjualan/list', array(
@@ -564,10 +561,8 @@ class Penjualan extends BaseController
         $query_result = $query->getResult();
 
         if($query_result) {
-            $omset = 0;
             foreach($query_result as $q) {
                 $profit += ($q->harga_jual - $q->harga_beli) * $q->qty;
-                $omset += $q->harga_jual * $q->qty;
             }
         }
 

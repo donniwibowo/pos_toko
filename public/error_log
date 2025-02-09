@@ -1,0 +1,45 @@
+[26-Nov-2024 04:53:17 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:22 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:25 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:25 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:29 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:33 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:53:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:30 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:31 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:35 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[26-Nov-2024 04:56:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/kasir/../plastik/kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/kasir/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/kasir/index.php on line 35
+[08-Feb-2025 08:17:18 UTC] PHP Warning:  require(/home/so6o6linql16/public_html/plastik/admin/../kasir_core/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/so6o6linql16/public_html/plastik/admin/index.php on line 35
+[08-Feb-2025 08:17:18 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/so6o6linql16/public_html/plastik/admin/../kasir_core/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/so6o6linql16/public_html/plastik/admin/index.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/so6o6linql16/public_html/plastik/admin/index.php on line 35
