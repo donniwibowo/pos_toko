@@ -375,7 +375,7 @@ class PenjualanApi extends ResourceController
             if($data) {
                 $tmp_data = [];
                 foreach($data as $d) {
-                    if($count_data < 200) {
+                    if($count_data < 300) {
                         $tmp_data[] = array(
                             "penjualan_id" => $d->penjualan_id,
                             "total_bayar" => $d->total_bayar,
