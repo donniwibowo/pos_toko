@@ -30,7 +30,7 @@
                   				<td>Total Belanja</td>
                           <td>Metode Pembayaran</td>
                           <td>Status Pembayaran</td>
-                          <td>Tanggal Transaksi</td>
+                          
                           <td>Kasir</td>
                           <td>Action</td>
                   			</tr>
@@ -45,7 +45,7 @@
                   				<td style="text-align: right;"><?php echo number_format($d->total_bayar, 0); ?></td>
                           <td><?php echo ucwords($d->metode_pembayaran); ?></td>
                           <td><?php echo ucwords($d->status_pembayaran); ?></td>
-                          <td><?php echo date('d M Y H:i:s', strtotime($d->tgl_dibuat)); ?></td>
+                          
                           <td><?php echo ucwords(strtolower($d->nama)) ?></td>
                   				<td>
                            <a href="detail/<?= $d->penjualan_id ?>"><i role="button" class="ti ti-info-circle fa-2y"></i></a>
