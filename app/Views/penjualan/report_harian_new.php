@@ -41,64 +41,8 @@
 
 
           <div class="row">
-            <div class="col-lg-4">
-              
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row alig n-items-start">
-                      <div class="col-8">
-                        <h5 class="card-title mb-9 fw-semibold">Total Penjualan</h5>
-                        <h4 class="fw-semibold mb-3"><?= $omset ?></h4>
-                        <div class="d-flex align-items-center pb-1">
-                          <p class="text-dark me-1 fs-3 mb-0" id="persentase_bulanan"><?= $jumlah_transaksi ?></p>
-                          <p class="fs-3 mb-0">transaksi</p>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="d-flex justify-content-end">
-                          <div
-                            class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                            Rp
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-              
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row alig n-items-start">
-                      <div class="col-8">
-                        <h5 class="card-title mb-9 fw-semibold">Profit</h5>
-                        <h4 class="fw-semibold mb-3"><?= $profit ?></h4>
-                        <div class="d-flex align-items-center pb-1">
-                          <p class="text-dark me-1 fs-3 mb-0" id="persentase_bulanan"><?= $persentase_profit ?>%</p>
-                          
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="d-flex justify-content-end">
-                          <div
-                            class="text-white bg-secondary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                            Rp
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4">
+            
+            <div class="col-lg-12">
               
                 <div class="card">
                   <div class="card-body">
