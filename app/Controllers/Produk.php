@@ -589,7 +589,8 @@ class Produk extends BaseController
                     }
 
                     session()->setFlashData('success', 'Data produk berhasil diubah');
-                    return redirect()->to(base_url('produk/list')); 
+                    // return redirect()->to(base_url('produk/list')); 
+                    return redirect()->to(base_url('produk/detail/'.pos_encrypt($id)));
                 } else {
                     session()->setFlashData('danger', 'Internal server error');
                 }
