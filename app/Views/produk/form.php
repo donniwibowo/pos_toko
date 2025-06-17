@@ -85,6 +85,7 @@
                       <div class="mb-3">
                           <label for="satuan_terkecil" class="form-label">Satuan Terkecil</label>
                           <select id="satuan_terkecil" name="satuan_terkecil" class="form-select" required>
+                            <option value='cm'<?= $data->satuan_terkecil == 'cm' ? ' selected' : '' ?>>CM</option>
                             <option value='gram'<?= $data->satuan_terkecil == 'gram' ? ' selected' : '' ?>>Gram</option>
                             <option value='lmbr'<?= $data->satuan_terkecil == 'lmbr' ? ' selected' : '' ?>>Lmbr</option>
                             <option value='pack'<?= $data->satuan_terkecil == 'pack' ? ' selected' : '' ?>>Pack</option>
