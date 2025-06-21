@@ -91,6 +91,7 @@
                             <option value='pack'<?= $data->satuan_terkecil == 'pack' ? ' selected' : '' ?>>Pack</option>
                             <option value='pcs'<?= $data->satuan_terkecil == 'pcs' ? ' selected' : '' ?>>Pcs</option>
                             <option value='rcg'<?= $data->satuan_terkecil == 'rcg' ? ' selected' : '' ?>>Rcg</option>
+                            <option value='rcg'<?= $data->satuan_terkecil == 'roll' ? ' selected' : '' ?>>Roll</option>
                             <option value='sch'<?= $data->satuan_terkecil == 'sch' ? ' selected' : '' ?>>Sch</option>
                           </select>
                           <p class="error-msg"><?= \Config\Services::validation()->getError('satuan_terkecil') ?></p>
