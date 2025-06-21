@@ -334,7 +334,10 @@ class Produk extends BaseController
                 }
 
                 if($index == count($_POST['satuan_penjualan'])) {
-                    session()->setFlashData('success', 'Input harga produk berhasil.');
+                    if($produk_model->update($id, ['tgl_diupdate' => date('Y-m-d H:i:s')])) {
+                        session()->setFlashData('success', 'Input harga produk berhasil.');
+                    }
+                    
                 } else {
                     $ctr_gagal_input = count($_POST['satuan_penjualan']) - $index;
                     session()->setFlashData('danger', $ctr_gagal_input.' data gagal diinput. Silahkan periksa dan input ulang.');
