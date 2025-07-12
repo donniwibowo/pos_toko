@@ -124,4 +124,59 @@ class UserApi extends ResourceController
                         
     }
 
+    public function getAllUsers($user_token) {
+        $response = array(
+            'status' => 404,
+            'data' => []
+        );
+
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            
+            $model = new UserModel();
+            
+            $db      = \Config\Database::connect();
+            $builder = $db->table('tbl_user u');
+            $builder->select('u.user_id, u.no_telp, u.nama, l.user_token');
+            $builder->where('u.is_deleted', 0);
+            $builder->where('l.status', 1);
+            $builder->join('tbl_user_api_login l', 'u.user_id = l.user_id');
+            $builder->orderBy('u.nama', 'asc');
+            $query   = $builder->get();
+            $data = $query->getResult();
+
+            $count_data = 0;
+            if($data) {
+                $tmp_data = [];
+                foreach($data as $d) {
+                    if($count_data < 91) {
+                        $tmp_data[] = array(
+                            "user_id" => $d->user_id,
+                            "no_telp" => $d->no_telp,
+                            "nama" => $d->nama,
+                            "user_token" => $d->user_token,
+                            
+                        );
+                    }
+                    $count_data++;
+                }
+
+                $response = array(
+                    'status' => 200,
+                    'data' => $tmp_data
+                );
+            }
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }
+
+        return $this->respond($response);
+
+        
+    }
+
 }

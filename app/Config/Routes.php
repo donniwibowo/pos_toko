@@ -145,6 +145,7 @@ $routes->group("api/user", function ($routes) {
     $routes->post('login', 'UserApi::login');
     $routes->get('logout/(:any)', 'UserApi::logout/$1');
     $routes->get('checklogin/(:any)', 'UserApi::checkLogin/$1');
+    $routes->get('getall/(:any)', 'UserApi::getAllUsers/$1');
 });
 
 $routes->group("setting", function ($routes) {
