@@ -852,4 +852,76 @@ class PenjualanApi extends ResourceController
         
         return $this->respond($response);
     }
+
+    public function getSummary($user_token) {
+            $response = array(
+            'status' => 404,
+            'data' => []
+        );
+
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            $tgl_dipilih = date('d M Y');
+            $omset = 0;
+            $jumlah_transaksi = 0;
+            $profit = 0;
+            $persentase_profit = 0;
+            
+
+            $db      = \Config\Database::connect();
+            $builder = $db->table('tbl_penjualan p');
+            $builder->select('p.total_bayar');
+            $builder->where('p.is_deleted', 0);
+            $builder->where('DATE(p.tgl_dibuat)', date('Y-m-d', strtotime($tgl_dipilih)));
+            $query   = $builder->get();
+            $query_result = $query->getResult();
+
+            if($query_result) {
+                foreach($query_result as $q) {
+                    $jumlah_transaksi++;
+                    $omset += $q->total_bayar;
+                }
+            }
+
+            $builder = $db->table('tbl_penjualan_detail d');
+            $builder->select('d.harga_beli, d.harga_jual, d.qty');
+            $builder->where('d.is_deleted', 0);
+            $builder->where('p.is_deleted', 0);
+            $builder->where('DATE(p.tgl_dibuat)', date('Y-m-d', strtotime($tgl_dipilih)));
+            $builder->join('tbl_penjualan p', 'd.penjualan_id = p.penjualan_id');
+            $query   = $builder->get();
+            $query_result = $query->getResult();
+
+            if($query_result) {
+                $omset = 0;
+                foreach($query_result as $q) {
+                    $profit += ($q->harga_jual - $q->harga_beli) * $q->qty;
+                    $omset += $q->harga_jual * $q->qty;
+                }
+            }
+
+            if($omset > 0 && $profit > 0) {
+                $persentase_profit = $profit / $omset * 100;
+            }
+
+
+            $response = array(
+                'status' => 200,
+                'omset' => $omset,
+                'jumlah_transaksi' => $jumlah_transaksi,
+                'profit' => $profit,
+                'persentase_profit' => $persentase_profit > 0 ? number_format($persentase_profit, 2) : 0,
+            );
+            
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }
+            
+        return $this->respond($response);
+    
+    }
 }

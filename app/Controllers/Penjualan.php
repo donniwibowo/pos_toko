@@ -232,7 +232,7 @@ class Penjualan extends BaseController
         ));
     }
 
-    public function analisaTEMPORARYUNSED()
+    public function analisaTEMPORARYUNUSED()
     {
         if(!session()->logged_in) {
             return redirect()->to(base_url('user/login')); 

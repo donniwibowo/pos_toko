@@ -166,6 +166,7 @@ $routes->group("api/penjualan", function ($routes) {
     // $routes->get('getsuggestion/(:any)', 'PenjualanApi::getProdukRekomendasi/$1');
     $routes->get('getsnaptoken', 'PenjualanApi::doMidtrans');
     $routes->post('updatestatuspenjualan/(:any)', 'PenjualanApi::updateStatusPenjualan/$1');
+    $routes->get('getsalessummary/(:any)', 'PenjualanApi::getSummary/$1');
 
     // $routes->post('logout', 'User::logout');
     // $routes->post('test-post/(:any)/(:any)', 'Employee::testpost/$1/$2');
