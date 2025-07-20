@@ -861,7 +861,7 @@ class PenjualanApi extends ResourceController
 
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
-            $tgl_dipilih = date('d M Y');
+            $tgl_dipilih = date('d-M-Y');
             $omset = 0;
             $jumlah_transaksi = 0;
             $profit = 0;
