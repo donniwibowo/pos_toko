@@ -565,7 +565,7 @@ class Penjualan extends BaseController
             $omset = 0;
             foreach($query_result as $q) {
                 $profit += ($q->harga_jual - $q->harga_beli) * $q->qty;
-                $omset += $q->harga_jual;
+                // $omset += $q->harga_jual * $q->qty;
             }
         }
 
