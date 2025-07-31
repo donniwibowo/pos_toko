@@ -924,4 +924,66 @@ class PenjualanApi extends ResourceController
         return $this->respond($response);
     
     }
+
+    public function getSetting($user_token) {
+            $response = array(
+            'status' => 404,
+            'data' => []
+        );
+
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            $nama_toko = "Toko A";
+            $alamat_toko = "Jl Merdeka";
+            $telp_toko = "Telp / WA 0987654321";
+            $sub_header = "Sub header";
+            $footer_info = "Promo / Info Penting";
+
+            $setting_model = new SettingModel();
+            $setting_data = $setting_model->findAll();
+
+
+            foreach($setting_data as $setting) {
+                if($setting['setting_name'] == 'nama_toko') {
+                    $nama_toko = $setting['setting_value'];
+                }
+
+                if($setting['setting_name'] == 'alamat_toko') {
+                    $alamat_toko = $setting['setting_value'];
+                }
+
+                if($setting['setting_name'] == 'telp_toko') {
+                    $telp_toko = $setting['setting_value'];
+                }
+
+                if($setting['setting_name'] == 'sub_header') {
+                    $sub_header = $setting['setting_value'];
+                }
+
+                if($setting['setting_name'] == 'footer_info') {
+                    $footer_info = $setting['setting_value'];
+                }
+            }
+
+            $response = array(
+                'status' => 200,
+                'nama_toko' => $nama_toko,
+                'alamat_toko' => $alamat_toko,
+                'telp_toko' => $telp_toko,
+                'sub_header' => $sub_header,
+                'footer_info' => $footer_info,
+                
+            );
+            
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }
+            
+        return $this->respond($response);
+    
+    }
 }
