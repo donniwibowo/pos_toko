@@ -925,7 +925,7 @@ class Produk extends BaseController
 
         $db      = \Config\Database::connect();
         $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
-        
+
         $builder = $db->table('tbl_produk');
         $builder->select('tbl_produk.produk_id, tbl_produk.nama_produk, tbl_produk_diskon.*');
         $builder->where('tbl_produk_diskon.is_deleted', 0);
@@ -949,6 +949,7 @@ class Produk extends BaseController
 
         $produk_data = [];
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
         
         foreach($produk_ids as $produk_id) {
             $builder = $db->table('tbl_produk p');
