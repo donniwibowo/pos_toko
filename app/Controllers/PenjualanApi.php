@@ -362,6 +362,7 @@ class PenjualanApi extends ResourceController
             //                 ->orderBy('tgl_dibuat', 'desc')->findAll();
 
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
             $builder = $db->table('tbl_penjualan p');
             $builder->select('p.*, u.nama');
             $builder->where('p.is_deleted', 0);
@@ -549,6 +550,7 @@ class PenjualanApi extends ResourceController
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
             $builder = $db->table('tbl_penjualan');
             $builder->select('tbl_penjualan.*, tbl_user.nama');
             $builder->where('tbl_penjualan.is_deleted', 0);
@@ -591,6 +593,7 @@ class PenjualanApi extends ResourceController
                 $user_data = $user_model->find($penjualan_data['dibuat_oleh']);
 
                 $db      = \Config\Database::connect();
+                $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
                 $builder = $db->table('tbl_penjualan_detail');
                 $builder->select('UPPER(tbl_produk.nama_produk) as nama_produk, tbl_produk.satuan_terkecil, tbl_penjualan_detail.*, tbl_produk_harga.satuan, tbl_produk_harga.netto');
@@ -744,6 +747,7 @@ class PenjualanApi extends ResourceController
 
 
                 $db      = \Config\Database::connect();
+                $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
                 $builder = $db->table('tbl_penjualan_detail');
                 $builder->select('tbl_penjualan_detail.*, tbl_produk.nama_produk');
@@ -869,6 +873,7 @@ class PenjualanApi extends ResourceController
             
 
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
             $builder = $db->table('tbl_penjualan p');
             $builder->select('p.total_bayar');
             $builder->where('p.is_deleted', 0);

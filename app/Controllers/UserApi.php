@@ -136,6 +136,8 @@ class UserApi extends ResourceController
             $model = new UserModel();
             
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+            
             $builder = $db->table('tbl_user u');
             $builder->select('u.user_id, u.no_telp, u.nama, l.user_token');
             $builder->where('u.is_deleted', 0);

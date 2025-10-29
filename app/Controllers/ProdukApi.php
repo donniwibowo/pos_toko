@@ -22,6 +22,8 @@ class ProdukApi extends ResourceController
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
             $builder = $db->table('tbl_produk p');
             $builder->select('p.produk_id, UPPER(p.nama_produk) as nama_produk, p.satuan_terkecil, p.netto, p.stok_min, p.satuan_terbesar');
             // $builder->selectSum('s.stok', 'total_stok');
@@ -169,6 +171,7 @@ class ProdukApi extends ResourceController
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
             $query = $db->query('SELECT produk_harga_id, produk_id, satuan, netto, harga_beli, harga_jual FROM tbl_produk_harga USE INDEX (idx_produk_id, idx_is_deleted) WHERE is_deleted=0 AND produk_id='.$produk_id.' ORDER BY harga_jual');
 
@@ -215,6 +218,8 @@ class ProdukApi extends ResourceController
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+            
             $builder = $db->table('tbl_produk');
             $builder->select('tbl_produk.produk_id, tbl_produk.nama_produk, tbl_produk_diskon.*');
             $builder->where('tbl_produk_diskon.is_deleted', 0);

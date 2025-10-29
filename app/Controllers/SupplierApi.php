@@ -25,6 +25,8 @@ class SupplierApi extends ResourceController
         $api_model = new UserApiLoginModel();
         if($api_model->isTokenValid($user_token)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
             $builder = $db->table('tbl_supplier s');
             $builder->select('s.supplier_id, s.nama_supplier');
             $builder->where('s.is_deleted', 0);
@@ -134,6 +136,8 @@ class SupplierApi extends ResourceController
             // $keyword = '';
             
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+            
             $builder = $db->table('tbl_tagihan t');
             $builder->select('t.*, s.nama_supplier');
             $builder->where('t.is_deleted', 0);

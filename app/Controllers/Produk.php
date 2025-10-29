@@ -221,6 +221,7 @@ class Produk extends BaseController
         
         // init koneksi ke dataase
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
         // get daftar stok produk
         $builder = $db->table('tbl_produk_stok');
@@ -295,6 +296,7 @@ class Produk extends BaseController
         
         // init koneksi ke dataase
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
        // get daftar harga produk
         $builder = $db->table('tbl_produk_harga');
@@ -366,6 +368,8 @@ class Produk extends BaseController
         }
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
         $builder = $db->table('tbl_produk');
         $builder->select('tbl_produk.*, tbl_kategori.kategori_id, tbl_kategori.nama_kategori, tbl_supplier.supplier_id, tbl_supplier.nama_supplier');
         $builder->where('tbl_produk.is_deleted', 0);
@@ -390,6 +394,8 @@ class Produk extends BaseController
 
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
         $builder = $db->table('tbl_produk');
         // $builder = $db->select('tbl_produk.*');
         $builder->where('tbl_produk.produk_id', pos_decrypt($id));
@@ -465,6 +471,7 @@ class Produk extends BaseController
 
         // init koneksi ke dataase
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
         // get daftar stok produk
         $builder = $db->table('tbl_produk_stok');
@@ -643,6 +650,8 @@ class Produk extends BaseController
 
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
         $builder = $db->table('tbl_produk p');
         $builder->select('p.*, s.stok');
         $builder->selectSum('s.stok');
@@ -683,6 +692,8 @@ class Produk extends BaseController
         $last_date = date('Y-m-t', strtotime($date));
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
         $builder = $db->table('tbl_produk');
         $builder->select('tbl_produk.*, tbl_kategori.kategori_id, tbl_kategori.nama_kategori, tbl_supplier.supplier_id, tbl_supplier.nama_supplier, tbl_produk_stok.stok_id, tbl_produk_stok.stok, tbl_produk_stok.tgl_kadaluarsa');
         $builder->where('tbl_produk.is_deleted', 0);
@@ -836,6 +847,8 @@ class Produk extends BaseController
                     if(isset($_POST['produk_bundling_ids'])) {
                         $produk_bundling_model = new ProdukBundlingModel();
                         $db      = \Config\Database::connect();
+                        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
                         $builder = $db->table('tbl_produk_bundling');
                         $builder->set('is_deleted', 1);
                         $builder->where('produk_diskon_id', $id);
@@ -889,6 +902,8 @@ class Produk extends BaseController
         
         if($produk_diskon_model->update($produk_diskon_id, $data)) {
             $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
             $builder = $db->table('tbl_produk_bundling');
             $builder->set('is_deleted', 1);
             $builder->where('produk_diskon_id', $produk_diskon_id);
@@ -909,6 +924,8 @@ class Produk extends BaseController
         }
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+        
         $builder = $db->table('tbl_produk');
         $builder->select('tbl_produk.produk_id, tbl_produk.nama_produk, tbl_produk_diskon.*');
         $builder->where('tbl_produk_diskon.is_deleted', 0);

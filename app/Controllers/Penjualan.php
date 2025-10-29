@@ -92,6 +92,7 @@ class Penjualan extends BaseController
         // $bulan_penjualan = [];
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
         $builder = $db->table('tbl_penjualan');
         $builder->select('Month(tgl_dibuat) as periode_bulan, Year(tgl_dibuat) as periode_tahun');
         $builder->selectSum('total_bayar');
@@ -190,6 +191,7 @@ class Penjualan extends BaseController
         }
         
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
         $builder = $db->table('tbl_penjualan');
         $builder->select('tbl_penjualan.*, tbl_user.nama');
         $builder->where('tbl_penjualan.is_deleted', 0);
@@ -210,6 +212,7 @@ class Penjualan extends BaseController
         }
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
         $builder = $db->table('tbl_penjualan');
         $builder->select('tbl_penjualan.*, tbl_user.nama');
@@ -269,6 +272,7 @@ class Penjualan extends BaseController
             //mengambil semua detail penjualan
             if($support > 0 && $confidence > 0) {
                 $db      = \Config\Database::connect();
+                $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
                 $builder = $db->table('tbl_penjualan_detail');
                 $builder->select('tbl_penjualan_detail.*, tbl_produk.nama_produk');
                 $builder->where('tbl_penjualan_detail.is_deleted', 0);
@@ -402,6 +406,7 @@ class Penjualan extends BaseController
 
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
         $builder = $db->table('tbl_penjualan_detail');
         $builder->select('tbl_penjualan_detail.*, tbl_produk.nama_produk');
         $builder->where('tbl_penjualan_detail.is_deleted', 0);
@@ -539,6 +544,7 @@ class Penjualan extends BaseController
 
         $db      = \Config\Database::connect();
         $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+    
         $builder = $db->table('tbl_penjualan p');
         $builder->select('p.total_bayar');
         $builder->where('p.is_deleted', 0);
