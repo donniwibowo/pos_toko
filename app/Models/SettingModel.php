@@ -11,6 +11,13 @@ class SettingModel extends Model
     protected $allowedFields = ['setting_name', 'setting_value', 'tgl_diupdate', 'diupdate_oleh'];
 
 
+    public function __construct()
+    {
+        parent::__construct(); // Call the parent constructor if needed
+
+        $this->db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+    }
+    
     public function getFormRules() {
         $rules = [
             'setting_name' => [
