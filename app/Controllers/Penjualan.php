@@ -538,6 +538,7 @@ class Penjualan extends BaseController
         }
 
         $db      = \Config\Database::connect();
+        $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
         $builder = $db->table('tbl_penjualan p');
         $builder->select('p.total_bayar');
         $builder->where('p.is_deleted', 0);
