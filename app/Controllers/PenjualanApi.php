@@ -38,7 +38,7 @@ class PenjualanApi extends ResourceController
             if(count($data) > 0) {
                 $dataToSave = [
                     'total_bayar' => 0,
-                    'jumlah_bayar' => $jumlah_bayar,
+                    'jumlah_bayar' => $jumlah_bayar == '' ? 0 : $jumlah_bayar,
                     'metode_pembayaran' => 'tunai',
                     'status_pembayaran' => 'lunas',
                     'midtrans_id' => 0,
