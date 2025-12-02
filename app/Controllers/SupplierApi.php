@@ -94,6 +94,9 @@ class SupplierApi extends ResourceController
                 'remarks' => $remarks,
                 'tgl_bayar' => null,
                 'tgl_dibuat' => date('Y-m-d H:i:s'),
+                'metode_pembayaran' => null,
+                'rekening' => null,
+                'jumlah_bayar' => 0,
                 'dibuat_oleh' => $user_id,
                 'is_deleted' => 0,
             ];
