@@ -991,4 +991,37 @@ class PenjualanApi extends ResourceController
         return $this->respond($response);
     
     }
+
+    public function deletePenjualan($user_token)
+    {
+        $response = array(
+            'status' => 404,
+            'data' => []
+        );
+
+        $penjualan_id = $this->request->getVar('penjualan_id');
+
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            $penjualan_model = new PenjualanModel();
+            $penjualan = $penjualan_model->find($penjualan_id);
+            if($penjualan) {
+                if($penjualan_model->update($penjualan_id, ['is_deleted' => 1])) {
+                    $response = array(
+                        'status' => 200,
+                    );
+                }
+
+            }
+            
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }  
+        
+        return $this->respond($response);
+    }
 }
