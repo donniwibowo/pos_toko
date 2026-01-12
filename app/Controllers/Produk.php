@@ -106,6 +106,7 @@ class Produk extends BaseController
                     'netto' => $_POST['netto'],
                     'stok_min' => $_POST['stok_min'],
                     'satuan_terbesar' => $_POST['satuan_terbesar'],
+                    'remarks' => $_POST['remarks'],
                     'tgl_dibuat' => date('Y-m-d H:i:s'),
                     'dibuat_oleh' => session()->user_id,
                     'tgl_diupdate' => date('Y-m-d H:i:s'),
@@ -513,6 +514,7 @@ class Produk extends BaseController
                     'netto' => $_POST['netto'],
                     'stok_min' => $_POST['stok_min'],
                     'satuan_terbesar' => $_POST['satuan_terbesar'],
+                    'remarks' => $_POST['remarks'],
                     'tgl_diupdate' => date('Y-m-d H:i:s'),
                     'diupdate_oleh' => session()->user_id,
                 ];

@@ -115,6 +115,12 @@
                         <p class="error-msg"><?= \Config\Services::validation()->getError('satuan_terbesar') ?></p>
                       </div>
 
+                      <div class="mb-3">
+                        <label for="remarks" class="form-label">Keterangan</label>
+                        <input type="text" class="form-control" id="remarks" name="remarks" value="<?= set_value('remarks', $data->remarks) ?>" placeholder="Keterangan">
+                        <p class="error-msg"><?= \Config\Services::validation()->getError('remarks') ?></p>
+                      </div>
+
                       <button type="button" id="btn_save_produk" class="btn btn-primary">Submit</button>
                       <a href="<?= base_url() ?>produk/list" class="btn btn-warning">Close</a>
                     </div>

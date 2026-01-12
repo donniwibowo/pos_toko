@@ -86,6 +86,13 @@
                         ?>
                       </td>
                     </tr>
+
+                    <tr>
+                      <td>Keterangan</td>
+                      <td>
+                        <?= isset($produk_data->remarks) ? $produk_data->remarks : "-" ?>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
 

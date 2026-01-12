@@ -9,7 +9,7 @@ class ProdukModel extends Model
     protected $table = 'tbl_produk';
     protected $primaryKey = 'produk_id';
     protected $foreignKey = ['supplier_id', 'kategori_id'];
-    protected $allowedFields = ['supplier_id', 'kategori_id', 'nama_produk', 'satuan_terkecil', 'netto', 'stok_min', 'satuan_terbesar', 'tgl_dibuat', 'dibuat_oleh', 'tgl_diupdate', 'diupdate_oleh', 'is_deleted'];
+    protected $allowedFields = ['supplier_id', 'kategori_id', 'nama_produk', 'satuan_terkecil', 'netto', 'stok_min', 'satuan_terbesar', 'remarks', 'tgl_dibuat', 'dibuat_oleh', 'tgl_diupdate', 'diupdate_oleh', 'is_deleted'];
    
 
     public function __construct()

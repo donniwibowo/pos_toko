@@ -25,7 +25,7 @@ class ProdukApi extends ResourceController
             $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
             $builder = $db->table('tbl_produk p');
-            $builder->select('p.produk_id, UPPER(p.nama_produk) as nama_produk, p.satuan_terkecil, p.netto, p.stok_min, p.satuan_terbesar');
+            $builder->select('p.produk_id, UPPER(p.nama_produk) as nama_produk, p.satuan_terkecil, p.netto, p.stok_min, p.satuan_terbesar, p.remarks');
             // $builder->selectSum('s.stok', 'total_stok');
             $builder->where('p.is_deleted', 0);
             // $builder->where('s.is_deleted', 0);
@@ -51,6 +51,7 @@ class ProdukApi extends ResourceController
                     'netto' => $q->netto,
                     'stok_min' => $q->stok_min,
                     'satuan_terbesar' => $q->satuan_terbesar,
+                    'remarks' => $q->remarks,
                     // 'printed_stok' => $produk_model->getStok($q->produk_id),
                     // 'total_stok' => $produk_model->getStokInSatuanTerkecil($q->produk_id)
                 );
