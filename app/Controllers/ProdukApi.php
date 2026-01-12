@@ -51,7 +51,7 @@ class ProdukApi extends ResourceController
                     'netto' => $q->netto,
                     'stok_min' => $q->stok_min,
                     'satuan_terbesar' => $q->satuan_terbesar,
-                    'remarks' => $q->remarks,
+                    'remarks' => !is_null($q->remarks) ? $q->remarks : "",
                     // 'printed_stok' => $produk_model->getStok($q->produk_id),
                     // 'total_stok' => $produk_model->getStokInSatuanTerkecil($q->produk_id)
                 );
