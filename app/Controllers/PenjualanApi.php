@@ -36,6 +36,7 @@ class PenjualanApi extends ResourceController
             $total = 0;
 
             if(count($data) > 0) {
+                // grab data from user input
                 $dataToSave = [
                     'total_bayar' => 0,
                     'jumlah_bayar' => $jumlah_bayar == '' ? 0 : $jumlah_bayar,
@@ -50,6 +51,7 @@ class PenjualanApi extends ResourceController
                     'is_deleted' => 0,
                 ];
 
+                // insert data ke table header penjualan
                 $penjualan_model = new PenjualanModel();
                 $penjualan_model->insert($dataToSave);
 
@@ -60,6 +62,7 @@ class PenjualanApi extends ResourceController
                     foreach($data as $d) {
                         $total += $d->subtotal;
 
+                        // input data produk yang tidak ada dalam master data
                         if($d->is_free_product > 0) {
                             $dataToSave = [
                                 'penjualan_id' => $penjualan_id,
@@ -80,6 +83,7 @@ class PenjualanApi extends ResourceController
 
 
                         } else {
+                            // input detail penjualan ke table penjualan detail
                             $produk_harga_model = new ProdukHargaModel();
                             $produk_harga_data = $produk_harga_model->find($d->produk_harga_id);
 
@@ -353,8 +357,17 @@ class PenjualanApi extends ResourceController
         );
 
         $api_model = new UserApiLoginModel();
+        $limit = 50;
         if($api_model->isTokenValid($user_token)) {
             $date_filter = $date_filter == '1' ? date('Y-m-d') : date('Y-m-d', strtotime($date_filter));
+
+
+            $setting_model = new SettingModel();
+            $setting_data = $setting_model->where('setting_name', 'limit_history')->first();
+
+            if($setting_data) {
+                $limit = $setting_data['setting_value'];
+            }
             
             $model = new PenjualanModel();
             // $data = $model->where('is_deleted', 0)
@@ -369,6 +382,7 @@ class PenjualanApi extends ResourceController
             $builder->where('DATE(p.tgl_dibuat)', $date_filter);
             $builder->join('tbl_user u', 'u.user_id = p.dibuat_oleh');
             $builder->orderBy('p.tgl_dibuat', 'desc');
+            $builder->limit($limit);
             $query   = $builder->get();
             $data = $query->getResult();
 
@@ -376,23 +390,23 @@ class PenjualanApi extends ResourceController
             if($data) {
                 $tmp_data = [];
                 foreach($data as $d) {
-                    if($count_data < 91) {
-                        $tmp_data[] = array(
-                            "penjualan_id" => $d->penjualan_id,
-                            "total_bayar" => $d->total_bayar,
-                            "metode_pembayaran" => $d->metode_pembayaran,
-                            "status_pembayaran" => $d->status_pembayaran,
-                            "midtrans_id" => $d->midtrans_id,
-                            "midtrans_status" => $d->midtrans_status,
-                            "tgl_dibuat" => date("d M Y", strtotime($d->tgl_dibuat)),
-                            "dibuat_oleh" => $d->dibuat_oleh,
-                            "tgl_diupdate" => $d->tgl_diupdate,
-                            "diupdate_oleh" => $d->diupdate_oleh,
-                            "is_deleted" => $d->is_deleted,
-                            'nama_kasir' => $d->nama,
-                        );
-                    }
-                    $count_data++;
+                    // if($count_data < 91) {
+                    $tmp_data[] = array(
+                        "penjualan_id" => $d->penjualan_id,
+                        "total_bayar" => $d->total_bayar,
+                        "metode_pembayaran" => $d->metode_pembayaran,
+                        "status_pembayaran" => $d->status_pembayaran,
+                        "midtrans_id" => $d->midtrans_id,
+                        "midtrans_status" => $d->midtrans_status,
+                        "tgl_dibuat" => date("d M Y", strtotime($d->tgl_dibuat)),
+                        "dibuat_oleh" => $d->dibuat_oleh,
+                        "tgl_diupdate" => $d->tgl_diupdate,
+                        "diupdate_oleh" => $d->diupdate_oleh,
+                        "is_deleted" => $d->is_deleted,
+                        'nama_kasir' => $d->nama,
+                    );
+                    // }
+                    // $count_data++;
                 }
 
                 $response = array(
