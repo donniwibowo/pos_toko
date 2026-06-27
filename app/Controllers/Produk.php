@@ -310,12 +310,12 @@ class Produk extends BaseController
             // input data ke tabel harga
             if(isset($_POST['satuan_penjualan']) && isset($_POST['jumlah_penjualan']) && isset($_POST['harga_beli']) && isset($_POST['harga_jual'])) {
                 $builder = $db->table('tbl_produk_harga');
-                $builder->where('produk_id', $id);
-                $builder->delete();
-
-                // $builder->set('is_deleted', 1);
                 // $builder->where('produk_id', $id);
-                // $builder->update();
+                // $builder->delete();
+
+                $builder->set('is_deleted', 1);
+                $builder->where('produk_id', $id);
+                $builder->update();
 
                 $index = 0;
                 $produk_harga_model = new ProdukHargaModel();
