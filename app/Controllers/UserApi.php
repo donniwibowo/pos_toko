@@ -37,6 +37,7 @@ class UserApi extends ResourceController
                 $nama_toko = "Nama Default";
                 $alamat_toko = "Alamat Default";
                 $telp_toko = "No Telp Default";
+                $admin_password = "";
 
                 $setting_model = new SettingModel();
                 $setting_data = $setting_model->findAll();
@@ -53,6 +54,10 @@ class UserApi extends ResourceController
                     if($setting['setting_name'] == 'telp_toko') {
                         $telp_toko = $setting['setting_value'];
                     }
+
+                    if($setting['setting_name'] == 'admin_password') {
+                        $admin_password = $setting['setting_value'];
+                    }
                 }
 
                 $data = [
@@ -64,6 +69,7 @@ class UserApi extends ResourceController
                     'nama_toko' => strtoupper($nama_toko),
                     'alamat_toko' => strtoupper($alamat_toko),
                     'telp_toko' => strtoupper($telp_toko),
+                    'admin_password' => $admin_password,
                     'logged_in' => true,
                 ];
 
