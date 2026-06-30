@@ -111,7 +111,7 @@ class PenjualanApi extends ResourceController
                                                                 ->findAll();
 
                                 $stop_pengurangan_stok = false;
-                                /* code ini tidak ada masalah, ditutup sementara dg alasan stock real tidak sinkron
+                                // code ini tidak ada masalah, ditutup sementara dg alasan stock real tidak sinkron
                                 if($produk_stok) {
                                     foreach($produk_stok as $p) {
                                         if(!$stop_pengurangan_stok) {
@@ -128,7 +128,7 @@ class PenjualanApi extends ResourceController
                                         
                                     }
                                 }
-                                */
+                                
                             }
 
                         }
