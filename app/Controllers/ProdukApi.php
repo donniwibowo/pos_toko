@@ -210,6 +210,66 @@ class ProdukApi extends ResourceController
         return $this->respond($response);
     }
 
+    public function getProdukStok($produk_id, $user_token) {
+        $response = array(
+            'status' => 404,
+            'data' => [],
+        );
+
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            $db      = \Config\Database::connect();
+            $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
+            $query = $db->query('SELECT s.stok_id, s.tgl_kadaluarsa, s.stok, p.netto, p.satuan_terkecil, p.satuan_terbesar FROM tbl_produk_stok s, tbl_produk p WHERE s.produk_id = p.produk_id AND s.is_deleted=0 AND s.produk_id='.$produk_id.' ORDER BY s.tgl_kadaluarsa');
+
+            $query_result = $query->getResult();
+            $printed_stok = '';
+             if($query_result) {
+                foreach($query_result as $q) {
+                    $printed_stok = '';
+
+                    $stok_carton = floor($q->stok / $q->netto);
+                    $stok_ecer = $q->stok - ($q->netto * $stok_carton);
+
+                    if($stok_ecer > 0) {
+                        if($stok_carton > 0) {
+                            $printed_stok = $stok_carton.' '.$q->satuan_terbesar.' '.number_format($stok_ecer, 0).' '.$q->satuan_terkecil;
+                        } else {
+                            $printed_stok =  number_format($stok_ecer, 0).' '.$q->satuan_terkecil;
+                        }
+                    } else {
+                        $printed_stok =  $stok_carton.' '.$q->satuan_terbesar;
+                    }
+
+                    $data[] = array(
+                        'stok_id' => $q->stok_id,
+                        'tgl_kadaluarsa' => date('d-M-Y', strtotime($q->tgl_kadaluarsa)),
+                        'stok' => $printed_stok,
+                        
+                        
+                    );
+                }
+
+                $response = array(
+                    'status' => 200,
+                    'data' => $data
+                );
+            }
+
+
+            
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }
+
+        return $this->respond($response);
+    }
+
     public function getProdukDiskon($user_token) {
         $response = array(
             'status' => 404,
