@@ -17,7 +17,10 @@
             </div>
           <?php } ?>
               
-          <h5 class="card-title fw-semibold mb-4">Informasi Produk</h5>
+          <h5 class="card-title fw-semibold mb-4">
+            Informasi Produk&nbsp;
+            <a style="font-size: 12px;" href="<?= base_url() ?>produk/update/<?= pos_encrypt($produk_data->produk_id) ?>"><i role="button" class="ti ti-edit fa-2y"></i></a>
+          </h5>
           <div class="card">
               <div class="card-body">
                 
