@@ -221,7 +221,7 @@ class ProdukApi extends ResourceController
             $db      = \Config\Database::connect();
             $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
 
-            $query = $db->query('SELECT s.stok_id, s.tgl_kadaluarsa, s.stok, p.netto, p.satuan_terkecil, p.satuan_terbesar FROM tbl_produk_stok s, tbl_produk p WHERE s.produk_id = p.produk_id AND s.is_deleted=0 AND s.produk_id='.$produk_id.' ORDER BY s.tgl_kadaluarsa');
+            $query = $db->query('SELECT s.stok_id, s.tgl_kadaluarsa, s.stok, s.tgl_dibuat, p.netto, p.satuan_terkecil, p.satuan_terbesar FROM tbl_produk_stok s, tbl_produk p WHERE s.produk_id = p.produk_id AND s.is_deleted=0 AND s.produk_id='.$produk_id.' ORDER BY s.tgl_kadaluarsa');
 
             $query_result = $query->getResult();
             $printed_stok = '';
@@ -244,6 +244,7 @@ class ProdukApi extends ResourceController
 
                     $data[] = array(
                         'stok_id' => $q->stok_id,
+                        'tgl_dibuat' => date('d-M-Y', strtotime($q->tgl_dibuat)),
                         'tgl_kadaluarsa' => date('d-M-Y', strtotime($q->tgl_kadaluarsa)),
                         'stok' => $printed_stok,
                         
@@ -257,6 +258,43 @@ class ProdukApi extends ResourceController
                 );
             }
 
+
+            
+        } else {
+            $response = array(
+                'status' => 403,
+                'msg' => 'Token tidak valid',
+                'data' => []
+            );
+        }
+
+        return $this->respond($response);
+    }
+
+    public function getProdukSales($produk_id, $user_token) {
+        $response = array(
+            'status' => 404,
+            'data' => [],
+        );
+
+        $interval = 14;
+        $api_model = new UserApiLoginModel();
+        if($api_model->isTokenValid($user_token)) {
+            $setting_model = new SettingModel();
+            $setting_data = $setting_model->where('setting_name', 'sales_interval')->first();
+
+            if($setting_data) {
+                $interval = $setting_data['setting_value'];
+            }
+
+
+            $produk_model = new ProdukModel();
+            $data_penjualan = $produk_model->getRataRataPenjualan($produk_id, $interval);
+            
+            $response = array(
+                'status' => 200,
+                'data' => $data_penjualan
+            );
 
             
         } else {

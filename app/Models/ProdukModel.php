@@ -102,12 +102,13 @@ class ProdukModel extends Model
         }
     }
 
-    public function getRataRataPenjualan($produk_id) {
+    public function getRataRataPenjualan($produk_id, $interval = 14) {
         $db      = \Config\Database::connect();
         $builder = $db->table('tbl_penjualan_detail');
         $builder->select('tbl_penjualan_detail.*, tbl_penjualan.tgl_dibuat, tbl_produk_harga.netto as netto_penjualan, tbl_produk.satuan_terkecil, tbl_produk.netto');
         $builder->where('tbl_penjualan_detail.is_deleted', 0);
         $builder->where('tbl_penjualan_detail.produk_id', $produk_id);
+        $builder->where('tbl_penjualan.tgl_dibuat >= NOW() - INTERVAL '.$interval.' DAY');
         $builder->join('tbl_penjualan', 'tbl_penjualan.penjualan_id = tbl_penjualan_detail.penjualan_id');
         $builder->join('tbl_produk_harga', 'tbl_produk_harga.produk_harga_id = tbl_penjualan_detail.produk_harga_id');
         $builder->join('tbl_produk', 'tbl_produk.produk_id = tbl_penjualan_detail.produk_id');
