@@ -126,6 +126,7 @@ $routes->group("api/produk", function ($routes) {
     $routes->get('getall/(:any)/(:any)', 'ProdukApi::getAllProduk/$1/$2');
     $routes->get('getprice/(:any)/(:any)', 'ProdukApi::getProdukHarga/$1/$2');
     $routes->get('getstock/(:any)/(:any)', 'ProdukApi::getProdukStok/$1/$2');
+    $routes->get('getproductsales/(:any)/(:any)', 'ProdukApi::getProdukSales/$1/$2');
     $routes->get('getnewestdiskon/(:any)/(:any)', 'ProdukApi::getNewestDiskon/$1/$2');
     $routes->get('getdiskon/(:any)', 'ProdukApi::getProdukDiskon/$1');
 
