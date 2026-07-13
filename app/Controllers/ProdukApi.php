@@ -7,6 +7,7 @@ use App\Models\ProdukModel;
 use App\Models\ProdukHargaModel;
 use App\Models\ProdukDiskonModel;
 use App\Models\UserApiLoginModel;
+use App\Models\SettingModel;
 
 
 class ProdukApi extends ResourceController
@@ -289,7 +290,7 @@ class ProdukApi extends ResourceController
 
 
             $produk_model = new ProdukModel();
-            $data_penjualan = $produk_model->getRataRataPenjualan($produk_id, $interval);
+            $data_penjualan[] = $produk_model->getRataRataPenjualan($produk_id, $interval);
             
             $response = array(
                 'status' => 200,
