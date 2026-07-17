@@ -1021,9 +1021,43 @@ class PenjualanApi extends ResourceController
             $penjualan = $penjualan_model->find($penjualan_id);
             if($penjualan) {
                 if($penjualan_model->update($penjualan_id, ['is_deleted' => 1])) {
-                    $response = array(
-                        'status' => 200,
-                    );
+
+                    $db      = \Config\Database::connect();
+                    $db->query("SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'");
+
+                    $builder = $db->table('tbl_penjualan_detail');
+                    $builder->select('tbl_penjualan_detail.produk_id, tbl_penjualan_detail.produk_harga_id, tbl_penjualan_detail.qty, tbl_produk_harga.netto');
+
+                    $builder->where('tbl_penjualan_detail.penjualan_id', $penjualan_id);
+
+                    $builder->join('tbl_produk_harga', 'tbl_produk_harga.produk_harga_id = tbl_penjualan_detail.produk_harga_id');
+
+                    $penjualan_detail   = $builder->get();
+
+                    $item_count = 0;
+                    $return_success = 0;
+
+                     if($penjualan_detail) {
+                        $item_count = count($penjualan_detail->getResult());
+                        foreach($penjualan_detail->getResult() as $item) {
+                            $return_qty = $item->qty * $item->netto;
+
+                            $builder = $db->table('tbl_produk_stok');
+                            $builder->where('produk_id', $item->produk_id);
+                            $builder->set('stok', 'stok + '.$return_qty, false); // false prevents escaping
+                            if($builder->update()) {
+                                $return_success++;
+                            }
+
+                        }
+
+                        if($return_success == $item_count) {
+                            $response = array(
+                                'status' => 200,
+                            );
+                        }
+                    }
+
                 }
 
             }
