@@ -247,7 +247,7 @@ class Produk extends BaseController
                 foreach($_POST['tgl_kadaluarsa'] as $tgl) {
                     $total_stok = $_POST['stok'][$index] * $produk_data['netto'];
 
-                    if($total_stok > 0) {
+                    // if($total_stok > 0) {
                         $data = [
                             'produk_id' => $id,
                             'tgl_kadaluarsa' => date('Y-m-d', strtotime($tgl)),
@@ -262,7 +262,7 @@ class Produk extends BaseController
                             $index++;    
                         }
 
-                    }
+                    // }
                     
                 }
 
