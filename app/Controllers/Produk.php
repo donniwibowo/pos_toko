@@ -233,30 +233,35 @@ class Produk extends BaseController
         if ($this->request->is('post')) {
            // input data ke tabel stok dan tgl kadaluarsa
             if(isset($_POST['tgl_kadaluarsa']) && isset($_POST['stok'])) {
-                $builder = $db->table('tbl_produk_stok');
-                $builder->where('produk_id', $id);
-                $builder->delete();
-
-                // $builder->set('is_deleted', 1);
+                // $builder = $db->table('tbl_produk_stok');
                 // $builder->where('produk_id', $id);
-                // $builder->update();
+                // $builder->delete();
+
+                $builder = $db->table('tbl_produk_stok');
+                $builder->set('is_deleted', 1);
+                $builder->where('produk_id', $id);
+                $builder->update();
 
                 $index = 0;
                 $produk_stok_model = new ProdukStokModel();
                 foreach($_POST['tgl_kadaluarsa'] as $tgl) {
                     $total_stok = $_POST['stok'][$index] * $produk_data['netto'];
-                    $data = [
-                        'produk_id' => $id,
-                        'tgl_kadaluarsa' => date('Y-m-d', strtotime($tgl)),
-                        'stok' => $total_stok,
-                        'tgl_dibuat' => date('Y-m-d H:i:s'),
-                        'dibuat_oleh' => session()->user_id,
-                        'tgl_diupdate' => null,
-                        'diupdate_oleh' => 0
-                    ];
 
-                    if($produk_stok_model->insert($data)) {
-                        $index++;    
+                    if($total_stok > 0) {
+                        $data = [
+                            'produk_id' => $id,
+                            'tgl_kadaluarsa' => date('Y-m-d', strtotime($tgl)),
+                            'stok' => $total_stok,
+                            'tgl_dibuat' => date('Y-m-d H:i:s'),
+                            'dibuat_oleh' => session()->user_id,
+                            'tgl_diupdate' => null,
+                            'diupdate_oleh' => 0
+                        ];
+
+                        if($produk_stok_model->insert($data)) {
+                            $index++;    
+                        }
+
                     }
                     
                 }
