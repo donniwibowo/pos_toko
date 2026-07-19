@@ -230,41 +230,101 @@ class Produk extends BaseController
         $builder->where('is_deleted', 0);
         $produk_stok_query   = $builder->get();
 
-        if ($this->request->is('post')) {
+        if ($this->request->is('post')) { // jika ada data yg dikirim dalam metode POST
            // input data ke tabel stok dan tgl kadaluarsa
             if(isset($_POST['tgl_kadaluarsa']) && isset($_POST['stok'])) {
-                // $builder = $db->table('tbl_produk_stok');
-                // $builder->where('produk_id', $id);
-                // $builder->delete();
-
+                
+                // hitung jumlah data yg ada dan yg di input   
                 $builder = $db->table('tbl_produk_stok');
-                $builder->set('is_deleted', 1);
                 $builder->where('produk_id', $id);
-                $builder->update();
+                $builder->where('is_deleted', 0);
+                $countExistingData = $builder->countAllResults(); // Returns integer (e.g., 14)
+                $countNewData = count($_POST['tgl_kadaluarsa']);
 
-                $index = 0;
-                $produk_stok_model = new ProdukStokModel();
-                foreach($_POST['tgl_kadaluarsa'] as $tgl) {
-                    $total_stok = $_POST['stok'][$index] * $produk_data['netto'];
+                if($countExistingData >= $countNewData) { // jika data yg ada lebih banyak
+                    $difference = $countExistingData - $countNewData;
+                    if($difference > 0) {
+                        $sql = "UPDATE tbl_produk_stok SET is_deleted = 1 WHERE produk_id = ? AND is_deleted = 0 ORDER BY stok_id ASC LIMIT ?";
+                        $db->query($sql, [$id, $difference]);
+                    }
+                    
+                } else { // jika ada yang baru lebih banyak
+                    $difference = $countNewData - $countExistingData;
+                    if($difference > 0) {
 
-                    // if($total_stok > 0) {
-                        $data = [
-                            'produk_id' => $id,
-                            'tgl_kadaluarsa' => date('Y-m-d', strtotime($tgl)),
-                            'stok' => $total_stok,
-                            'tgl_dibuat' => date('Y-m-d H:i:s'),
-                            'dibuat_oleh' => session()->user_id,
-                            'tgl_diupdate' => null,
-                            'diupdate_oleh' => 0
-                        ];
+                        $builder = $db->table('tbl_produk_stok');
+                        $builder->where('produk_id', $id);
+                        $builder->where('is_deleted', 1);
+                        $countExistingDeletedData = $builder->countAllResults(); // Returns integer (e.g., 14)
 
-                        if($produk_stok_model->insert($data)) {
-                            $index++;    
+                        if($countExistingData >= $difference) {
+                            $differenceOfExistingData = $countExistingData - $difference;
+                            if($differenceOfExistingData > 0) {
+
+                                $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
+                                 $db->query($sql, [$id, $differenceOfExistingData]);
+
+                            }
+
+                        } else {
+                            $produk_stok_model = new ProdukStokModel();
+                            for($i = 0; $i < $difference; $i++) {
+
+                                $data = [
+                                    'produk_id' => $id,
+                                    'tgl_kadaluarsa' => null,
+                                    'stok' => 0,
+                                    'tgl_dibuat' => date('Y-m-d H:i:s'),
+                                    'dibuat_oleh' => session()->user_id,
+                                    'tgl_diupdate' => null,
+                                    'diupdate_oleh' => 0
+                                ];
+
+                                $produk_stok_model->insert($data);
+
+                            }
                         }
 
-                    // }
-                    
+
+                    }
                 }
+
+
+                $builder = $db->table('tbl_produk_stok');
+                $builder->where('produk_id', $id);
+                $builder->where('is_deleted', 0);
+                $countExistingData = $builder->countAllResults(); // Returns integer (e.g., 14)
+
+                $countNewData = count($_POST['tgl_kadaluarsa']);
+
+                if($countExistingData == $countNewData) {
+                    $builder = $db->table('tbl_produk_stok');
+
+                    $builder->select('stok_id');
+                    $builder->where('is_deleted', 0);
+                    $builder->where('produk_id', $id);
+                    $query = $builder->get();
+                    $results = $query->getResultArray();
+                    $index  = 0;
+
+                    foreach($results as $result) {
+                        $total_stok = $_POST['stok'][$index] * $produk_data['netto'];
+                        $data = [
+                            'tgl_kadaluarsa' => date('Y-m-d', strtotime($_POST['tgl_kadaluarsa'][$index])),
+                            'stok'  => $total_stok,
+                            'tgl_diupdate' => date('Y-m-d H:i:s'),
+                            'diupdate_oleh' => session()->user_id,
+                        ];
+
+
+                        $builder = $db->table('tbl_produk_stok');
+                        $builder->where('stok_id', $result['stok_id']);
+                        $builder->update($data);
+                        $index++;
+                    }
+
+                }
+
 
                 if($index == count($_POST['tgl_kadaluarsa'])) {
                     session()->setFlashData('success', 'Input stok produk berhasil.');
@@ -272,12 +332,54 @@ class Produk extends BaseController
                     $ctr_gagal_input = count($_POST['tgl_kadaluarsa']) - $index;
                     session()->setFlashData('danger', $ctr_gagal_input.' data gagal diinput. Silahkan periksa dan input ulang.');
                 }
-            }
+
+
+                // $builder = $db->table('tbl_produk_stok');
+                // $builder->where('produk_id', $id);
+                // $builder->delete();
+
+                // $builder = $db->table('tbl_produk_stok');
+                // $builder->set('is_deleted', 1);
+                // $builder->where('produk_id', $id);
+                // $builder->update();
+
+                // $index = 0;
+                // $produk_stok_model = new ProdukStokModel();
+                // foreach($_POST['tgl_kadaluarsa'] as $tgl) {
+                //     $total_stok = $_POST['stok'][$index] * $produk_data['netto'];
+
+                //     // if($total_stok > 0) {
+                //         $data = [
+                //             'produk_id' => $id,
+                //             'tgl_kadaluarsa' => date('Y-m-d', strtotime($tgl)),
+                //             'stok' => $total_stok,
+                //             'tgl_dibuat' => date('Y-m-d H:i:s'),
+                //             'dibuat_oleh' => session()->user_id,
+                //             'tgl_diupdate' => null,
+                //             'diupdate_oleh' => 0
+                //         ];
+
+                //         if($produk_stok_model->insert($data)) {
+                //             $index++;    
+                //         }
+
+                //     // }
+                    
+                // }
+
+                // if($index == count($_POST['tgl_kadaluarsa'])) {
+                //     session()->setFlashData('success', 'Input stok produk berhasil.');
+                // } else {
+                //     $ctr_gagal_input = count($_POST['tgl_kadaluarsa']) - $index;
+                //     session()->setFlashData('danger', $ctr_gagal_input.' data gagal diinput. Silahkan periksa dan input ulang.');
+                // }
+
+            } // jika terdapat input data stok dan tgl kadaluarsa
 
             
             return redirect()->to(base_url('produk/detail/'.pos_encrypt($id)));
         
-        }
+        } // end of post data
 
         
         return view('produk/form_stok', array(
