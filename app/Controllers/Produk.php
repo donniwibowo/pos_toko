@@ -250,6 +250,7 @@ class Produk extends BaseController
                     
                 } else { // jika ada yang baru lebih banyak
                     $difference = $countNewData - $countExistingData;
+                    // jika perlu nambah row baru atau bisa meng-enable deleted data
                     if($difference > 0) {
 
                         $builder = $db->table('tbl_produk_stok');
@@ -257,14 +258,25 @@ class Produk extends BaseController
                         $builder->where('is_deleted', 1);
                         $countExistingDeletedData = $builder->countAllResults(); // Returns integer (e.g., 14)
 
-                        if($countExistingData >= $difference) {
-                            $differenceOfExistingData = $countExistingData - $difference;
-                            if($differenceOfExistingData > 0) {
+                        if($countExistingDeletedData >= $difference) {
+                            
+                            $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
+                            $db->query($sql, [$id, $difference]);
 
-                                $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
-                                 $db->query($sql, [$id, $differenceOfExistingData]);
+                            
 
-                            }
+                            // $differenceOfExistingData = $countExistingDeletedData - $difference;
+
+
+                            // if($differenceOfExistingData > 0) {
+
+                            //     $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
+                            //     $db->query($sql, [$id, $difference]);
+
+                            // } else {
+                            //     $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
+                            //      $db->query($sql, [$id, $difference]);
+                            // }
 
                         } else {
                             $produk_stok_model = new ProdukStokModel();
@@ -367,12 +379,12 @@ class Produk extends BaseController
                     
                 // }
 
-                // if($index == count($_POST['tgl_kadaluarsa'])) {
-                //     session()->setFlashData('success', 'Input stok produk berhasil.');
-                // } else {
-                //     $ctr_gagal_input = count($_POST['tgl_kadaluarsa']) - $index;
-                //     session()->setFlashData('danger', $ctr_gagal_input.' data gagal diinput. Silahkan periksa dan input ulang.');
-                // }
+                if($index == count($_POST['tgl_kadaluarsa'])) {
+                    session()->setFlashData('success', 'Input stok produk berhasil.');
+                } else {
+                    $ctr_gagal_input = count($_POST['tgl_kadaluarsa']) - $index;
+                    session()->setFlashData('danger', $ctr_gagal_input.' data gagal diinput. Silahkan periksa dan input ulang.');
+                }
 
             } // jika terdapat input data stok dan tgl kadaluarsa
 
