@@ -263,20 +263,7 @@ class Produk extends BaseController
                             $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
                             $db->query($sql, [$id, $difference]);
 
-                            
-
-                            // $differenceOfExistingData = $countExistingDeletedData - $difference;
-
-
-                            // if($differenceOfExistingData > 0) {
-
-                            //     $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
-                            //     $db->query($sql, [$id, $difference]);
-
-                            // } else {
-                            //     $sql = "UPDATE tbl_produk_stok SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY stok_id DESC LIMIT ?";
-                            //      $db->query($sql, [$id, $difference]);
-                            // }
+      
 
                         } else {
                             $produk_stok_model = new ProdukStokModel();
@@ -428,32 +415,127 @@ class Produk extends BaseController
 
             // input data ke tabel harga
             if(isset($_POST['satuan_penjualan']) && isset($_POST['jumlah_penjualan']) && isset($_POST['harga_beli']) && isset($_POST['harga_jual'])) {
+                // hitung jumlah data yg ada dan yg di input   
                 $builder = $db->table('tbl_produk_harga');
-                // $builder->where('produk_id', $id);
-                // $builder->delete();
-
-                $builder->set('is_deleted', 1);
                 $builder->where('produk_id', $id);
-                $builder->update();
+                $builder->where('is_deleted', 0);
+                $countExistingData = $builder->countAllResults(); // Returns integer (e.g., 14)
+                $countNewData = count($_POST['satuan_penjualan']);
 
-                $index = 0;
-                $produk_harga_model = new ProdukHargaModel();
-                foreach($_POST['satuan_penjualan'] as $satuan) {
-                    $data = [
-                        'produk_id' => $id,
-                        'satuan' => $satuan,
-                        'netto' => $_POST['jumlah_penjualan'][$index],
-                        'harga_beli' => $_POST['harga_beli'][$index],
-                        'harga_jual' => $_POST['harga_jual'][$index],
-                        'tgl_dibuat' => date('Y-m-d H:i:s'),
-                        'dibuat_oleh' => session()->user_id,
-                        'tgl_diupdate' => null,
-                        'diupdate_oleh' => 0
-                    ];
+                if($countExistingData >= $countNewData) { // jika data yg ada lebih banyak
+                    $difference = $countExistingData - $countNewData;
+                    // jika selisih 0 yang arti nya existing data == new data maka tidak ada yg di hapus
+                    if($difference > 0) {
+                        $sql = "UPDATE tbl_produk_harga SET is_deleted = 1 WHERE produk_id = ? AND is_deleted = 0 ORDER BY produk_harga_id ASC LIMIT ?";
+                        $db->query($sql, [$id, $difference]);
+                    }
+                    
+                } else { // jika ada yang baru lebih banyak
+                    $difference = $countNewData - $countExistingData;
+                    // jika perlu nambah row baru atau bisa meng-enable deleted data
+                    if($difference > 0) {
 
-                    $produk_harga_model->insert($data);
-                    $index++;
+                        $builder = $db->table('tbl_produk_harga');
+                        $builder->where('produk_id', $id);
+                        $builder->where('is_deleted', 1);
+                        $countExistingDeletedData = $builder->countAllResults(); // Returns integer (e.g., 14)
+
+                        if($countExistingDeletedData >= $difference) {
+                            
+                            $sql = "UPDATE tbl_produk_harga SET is_deleted = 0 WHERE produk_id = ? AND is_deleted = 1 ORDER BY produk_harga_id DESC LIMIT ?";
+                            $db->query($sql, [$id, $difference]);
+
+      
+
+                        } else {
+                            $produk_harga_model = new ProdukHargaModel();
+                            for($i = 0; $i < $difference; $i++) {
+
+                                $data = [
+                                    'produk_id' => $id,
+                                    'satuan' => null,
+                                    'netto' => null,
+                                    'harga_beli' => null,
+                                    'harga_jual' => null,
+                                    'tgl_dibuat' => date('Y-m-d H:i:s'),
+                                    'dibuat_oleh' => session()->user_id,
+                                    'tgl_diupdate' => null,
+                                    'diupdate_oleh' => 0
+                                ];
+
+                                $produk_harga_model->insert($data);
+
+                            }
+                        }
+
+
+                    }
                 }
+
+
+                $builder = $db->table('tbl_produk_harga');
+                $builder->where('produk_id', $id);
+                $builder->where('is_deleted', 0);
+                $countExistingData = $builder->countAllResults(); // Returns integer (e.g., 14)
+
+                $countNewData = count($_POST['satuan_penjualan']);
+
+                if($countExistingData == $countNewData) {
+                    $builder = $db->table('tbl_produk_harga');
+
+                    $builder->select('produk_harga_id');
+                    $builder->where('is_deleted', 0);
+                    $builder->where('produk_id', $id);
+                    $query = $builder->get();
+                    $results = $query->getResultArray();
+                    $index  = 0;
+
+                    foreach($results as $result) {
+                       
+                        $data = [
+                            'satuan' => $_POST['satuan_penjualan'][$index],
+                            'netto' => $_POST['jumlah_penjualan'][$index],
+                            'harga_beli' => $_POST['harga_beli'][$index],
+                            'harga_jual' => $_POST['harga_jual'][$index],
+                            'tgl_diupdate' => date('Y-m-d H:i:s'),
+                            'diupdate_oleh' => session()->user_id,
+                        ];
+
+
+                        $builder = $db->table('tbl_produk_harga');
+                        $builder->where('produk_harga_id', $result['produk_harga_id']);
+                        $builder->update($data);
+                        $index++;
+                    }
+
+                }
+
+
+                // // $builder->where('produk_id', $id);
+                // // $builder->delete();
+
+                // $builder->set('is_deleted', 1);
+                // $builder->where('produk_id', $id);
+                // $builder->update();
+
+                // $index = 0;
+                // $produk_harga_model = new ProdukHargaModel();
+                // foreach($_POST['satuan_penjualan'] as $satuan) {
+                //     $data = [
+                //         'produk_id' => $id,
+                //         'satuan' => $satuan,
+                //         'netto' => $_POST['jumlah_penjualan'][$index],
+                //         'harga_beli' => $_POST['harga_beli'][$index],
+                //         'harga_jual' => $_POST['harga_jual'][$index],
+                //         'tgl_dibuat' => date('Y-m-d H:i:s'),
+                //         'dibuat_oleh' => session()->user_id,
+                //         'tgl_diupdate' => null,
+                //         'diupdate_oleh' => 0
+                //     ];
+
+                //     $produk_harga_model->insert($data);
+                //     $index++;
+                // }
 
                 if($index == count($_POST['satuan_penjualan'])) {
                     if($produk_model->update($id, ['tgl_diupdate' => date('Y-m-d H:i:s')])) {
