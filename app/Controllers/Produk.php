@@ -311,6 +311,7 @@ class Produk extends BaseController
                         $data = [
                             'tgl_kadaluarsa' => date('Y-m-d', strtotime($_POST['tgl_kadaluarsa'][$index])),
                             'stok'  => $total_stok,
+                            'tgl_dibuat' => date('Y-m-d H:i:s'),
                             'tgl_diupdate' => date('Y-m-d H:i:s'),
                             'diupdate_oleh' => session()->user_id,
                         ];
